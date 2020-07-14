@@ -1,0 +1,18 @@
+<script>function cfDecodeEmail(encodedString) {
+    var email = "", r = parseInt(encodedString.substr(0, 2), 16), n, i;
+    for (n = 2; encodedString.length - n; n += 2){
+        i = parseInt(encodedString.substr(n, 2), 16) ^ r;
+        email += String.fromCharCode(i);
+    }
+    return email;
+}
+
+console.log(cfDecodeEmail("543931142127353935313e352e7a373b39")); // usage
+</script>
+
+
+<?  <a class="__cf_email__" href="http://www.cloudflare.com/email-protection" data-cfemail="adfececcc3c9ccc1efc4e0ccd9f9c5ccc0e9c2839f9d9c9f83fee9f9fb83d59f9b9980eedafdf2c5ccdec5d8f2caccc0c8deedd4ccc5c2c283cec2c080f9c5ccc3c6">[email protected]</a><script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
+/* ]]> */
+</script> ?>
